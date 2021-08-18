@@ -81,12 +81,14 @@ func main() {
 var static embed.FS
 
 func main() {
-    // Sub return a FS interface corresponding to the content of `static`
+    // Sub() returns a FS interface corresponding 
+	// to the content of the `static` sub directory
 	fsys, _ := fs.Sub(static, "static")
 
-    // http.FS convert an FS implementation (corresponds to http.Dir("/static") of operating file system)
+    // http.FS convert an FS implementation
+	// Corresponds to http.Dir("/static") of operating file system
 	http.Handle("/", http.FileServer(http.FS(fsys)))
-	http.ListenAndServe(":"+port, nil)
+	http.ListenAndServe(":8888", nil)
 }
 ```
 
@@ -104,9 +106,9 @@ import (
 var script []byte
 
 func main() {
-	L := lua.NewState()      // Opens Lua
+	L := lua.NewState()        // Opens Lua
 	defer L.Close()
-	L.DoString(string(data)) // Executes Lua string
+	L.DoString(string(script)) // Executes Lua string
 }
 ```
 
