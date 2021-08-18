@@ -7,12 +7,12 @@ import (
 )
 
 //go:embed script.lua
-var script []byte
+var script string
 
 func main() {
 	L := lua.NewState()
 	defer L.Close()
-	if err := L.DoString(string(script)); err != nil {
+	if err := L.DoString(script); err != nil {
 		panic(err)
 	}
 }

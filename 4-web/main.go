@@ -15,6 +15,6 @@ var static embed.FS
 func main() {
 	fsys, _ := fs.Sub(static, "static")
 	http.Handle("/", http.FileServer(http.FS(fsys)))
-	fmt.Printf("Local web server listening on port %s\n", port)
+	fmt.Printf("Point your browser to http://localhost:%s\n", port)
 	http.ListenAndServe(":"+port, nil)
 }

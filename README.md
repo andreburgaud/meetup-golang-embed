@@ -5,6 +5,7 @@
 * Fast Compilation
 * Simple Language (*)
 * Cross compilation
+* Complete and Reliable Standard Library
 * **Single Executable**
 
 ## Embed
@@ -42,7 +43,7 @@ var hello string
 
 ### 2 - License Example
 
-* Variable of type `[]bytes`
+* Variable of type `[]byte`
 
 
 ```go
@@ -103,12 +104,12 @@ import (
 )
 
 //go:embed script.lua
-var script []byte
+var script string
 
 func main() {
-	L := lua.NewState()        // Opens Lua
+	L := lua.NewState() // Open Lua
 	defer L.Close()
-	L.DoString(string(script)) // Executes Lua string
+	L.DoString(script)  // Execute Lua string
 }
 ```
 
