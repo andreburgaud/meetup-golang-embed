@@ -1,0 +1,14 @@
+[
+    {
+        "env": "dev",
+        "url": "https://dev.example.com"
+    },
+    {
+        "env": "test",
+        "url": "https://test.example.com"
+    },
+    {
+        "env": "prod",
+        "url": "https://example.com"
+    }
+]

@@ -1,0 +1,8 @@
+EXE := "hello"
+
+build:
+    -mkdir out
+    go build -o out/{{EXE}} main.go
+
+clean:
+    -rm -rf out
