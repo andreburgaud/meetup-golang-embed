@@ -113,6 +113,30 @@ func main() {
 }
 ```
 
+## Build the Examples
+
+To build the examples, you can look at the `justfile` in each directory and execute the corresponding `go build` command.
+
+If you want to get the build automation provided by `just`, you can install this tool available at https://github.com/casey/just. A `justfile` is comparable to a `Makefile` without the drawback of it.
+
+For example on a Mac, you can install `just` with [Homebrew](https://brew.sh/) as follows:
+
+```
+$ brew install just
+```
+
+To build all the examples in this repository, you can subsequently, execute the following command at the root of the project:
+
+```
+$ just build
+```
+
+This command will execute the `just` file in each respective example directory. Alternatively, you can also execute `just build` in each example directory containing Go code.
+
+The builds generate the output, a single executable, in a subdirectory `out`, in each example folder. This is intentional to demonstrate that the executables contain all the static resources without reying on the static files in the file system.
+
+Checkout [just documentation](https://github.com/casey/just/blob/master/README.adoc) for more details.
+
 ## Resources
 
 * https://pkg.go.dev/embed

@@ -10,10 +10,10 @@ import (
 const port = "8888"
 
 //go:embed static
-var static embed.FS
+var s embed.FS
 
 func main() {
-	fsys, _ := fs.Sub(static, "static")
+	fsys, _ := fs.Sub(s, "static")
 	http.Handle("/", http.FileServer(http.FS(fsys)))
 	fmt.Printf("Point your browser to http://localhost:%s\n", port)
 	http.ListenAndServe(":"+port, nil)
